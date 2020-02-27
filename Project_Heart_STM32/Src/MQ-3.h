@@ -12,11 +12,13 @@
 
 
 
-void MQ3_ADC(uint8_t *value);
+void MQ3_ADC(uint16_t *value);
 
 void alcohol(void);
 
-void alcoholCalc(uint8_t *value);
+void alcoholCalc(uint16_t *value);
+
+void R0Calc(uint16_t *value);
 
 
 

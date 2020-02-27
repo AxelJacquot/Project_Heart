@@ -210,7 +210,7 @@ static void MX_ADC1_Init(void)
 	 */
 	hadc1.Instance = ADC1;
 	hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV8;
-	hadc1.Init.Resolution = ADC_RESOLUTION_8B;
+	hadc1.Init.Resolution = ADC_RESOLUTION_10B;
 	hadc1.Init.ScanConvMode = DISABLE;
 	hadc1.Init.ContinuousConvMode = DISABLE;
 	hadc1.Init.DiscontinuousConvMode = DISABLE;
@@ -371,6 +371,7 @@ static void MX_GPIO_Init(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	uint8_t bpm = 0;
 	uint8_t touch = 0x00;
+	HAL_Delay(10);
 	touch = heartrate();
 	cnt++;
 	if(cnt >= 32){
@@ -410,10 +411,10 @@ void bh1790Read(uint8_t dataOut[4]){
 	HAL_I2C_Master_Receive(&hi2c1, Addr, &dataOut[3], 1, 10);
 }
 
-void MQ3_ADC(uint8_t *dataADC){
+void MQ3_ADC(uint16_t *dataADC){
 	HAL_ADC_Start(&hadc1);	//Active le convertisseur analogique numérique
 	if(HAL_ADC_PollForConversion(&hadc1,1000000 == HAL_OK)){	//attent la fin de la conversion de la tension
-		*dataADC = (unsigned char) HAL_ADC_GetValue(&hadc1);}
+		*dataADC = (uint16_t) HAL_ADC_GetValue(&hadc1);}
 	HAL_ADC_Stop(&hadc1);//Désactive le CAN
 }
 /* USER CODE END 4 */
