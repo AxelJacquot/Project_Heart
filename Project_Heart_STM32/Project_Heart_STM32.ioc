@@ -1,10 +1,11 @@
 #MicroXplorer Configuration settings - do not modify
 ADC1.Channel-1\#ChannelRegularConversion=ADC_CHANNEL_15
+ADC1.ClockPrescaler=ADC_CLOCK_SYNC_PCLK_DIV8
 ADC1.ContinuousConvMode=DISABLE
-ADC1.IPParameters=Rank-1\#ChannelRegularConversion,Channel-1\#ChannelRegularConversion,SamplingTime-1\#ChannelRegularConversion,NbrOfConversionFlag,master,Resolution,ContinuousConvMode
+ADC1.IPParameters=Rank-1\#ChannelRegularConversion,Channel-1\#ChannelRegularConversion,SamplingTime-1\#ChannelRegularConversion,NbrOfConversionFlag,master,Resolution,ContinuousConvMode,ClockPrescaler
 ADC1.NbrOfConversionFlag=1
 ADC1.Rank-1\#ChannelRegularConversion=1
-ADC1.Resolution=ADC_RESOLUTION_8B
+ADC1.Resolution=ADC_RESOLUTION_10B
 ADC1.SamplingTime-1\#ChannelRegularConversion=ADC_SAMPLETIME_3CYCLES
 ADC1.master=1
 File.Version=6

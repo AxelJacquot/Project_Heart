@@ -14,9 +14,9 @@
 
 void MQ3_ADC(uint16_t *value);
 
-void alcohol(void);
+uint8_t alcohol(void);
 
-void alcoholCalc(uint16_t *value);
+uint8_t alcoholCalc(uint16_t *value);
 
 void R0Calc(uint16_t *value);
 
