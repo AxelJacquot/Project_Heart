@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Heart.qml</file>
+        <file>Connexion.qml</file>
+        <file>Alcohol.qml</file>
+        <file>Sensor.qml</file>
+        <file>Image/beer.png</file>
+        <file>Image/heartBlack.png</file>
+        <file>Image/heartRed.png</file>
+    </qresource>
+</RCC>
